@@ -31,7 +31,7 @@ from transformers import (
 from peft import LoraConfig, PeftModel
 from trl import SFTTrainer
 
-# The model that you want to train from the Hugging Face hub
+# The model to train from the Hugging Face hub
 model_name = "NousResearch/Llama-2-7b-chat-hf"
 
 # The instruction dataset to use
@@ -254,8 +254,6 @@ del trainer
 import gc
 gc.collect()
 gc.collect()
-
-"""You can train a Llama 2 model on the entire dataset using [mlabonne/guanaco-llama2](https://huggingface.co/datasets/mlabonne/guanaco-llama2)"""
 
 # Reload model in FP16 and merge it with LoRA weights
 base_model = AutoModelForCausalLM.from_pretrained(
